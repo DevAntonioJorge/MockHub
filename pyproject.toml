@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "bcrypt>=4.3.0",
     "fastapi>=0.115.13",
     "psycopg[binary]>=3.2.9",
     "python-dotenv>=1.1.1",
