@@ -8,4 +8,4 @@ HOST = os.getenv("HOST", "localhost")
 PORT = int(os.getenv("PORT", 8000))
 
 if __name__ == "__main__":
-    uvicorn.run("src.main:app", host=HOST, port=PORT, reload=True, workers=1)
+    uvicorn.run("src.app:app", host=HOST, port=PORT, reload=True, workers=1)
