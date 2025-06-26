@@ -1,18 +1,32 @@
 from pydantic import BaseModel, EmailStr
-from uuid import UUID
 
 class CreateUserRequest(BaseModel):
     username: str
     email: EmailStr
     password: str
-
-class CreateUserResponse(BaseModel):
-    id: UUID
+    
+class User(BaseModel):
+    id: str
     username: str
     email: EmailStr
+    password: str
+    created_at: str 
+    role: str = "user"
+
+class UserResponse(BaseModel):
+    id: str
+    username: str
+    email: EmailStr
+    created_at: str 
+    role: str = "user"
+
+class ListUsersResponse(BaseModel):
+    users: list[UserResponse]
+    length: int
+    
 
 class CreateMockServiceRequest(BaseModel):
-    owner_id: UUID
+    owner_id: str
     name: str
     route: str
     method: str
@@ -22,8 +36,8 @@ class CreateMockServiceRequest(BaseModel):
     latency: int = 0
 
 class CreateMockServiceResponse(BaseModel):
-    id: UUID
-    owner_id: UUID
+    id: str
+    owner_id: str
     name: str
     route: str
     method: str
