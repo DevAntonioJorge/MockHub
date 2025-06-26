@@ -8,6 +8,7 @@ dependencies = [
     "bcrypt>=4.3.0",
     "fastapi>=0.115.13",
     "psycopg[binary]>=3.2.9",
+    "pydantic[email]>=2.11.7",
     "python-dotenv>=1.1.1",
     "sqlmodel>=0.0.24",
     "uvicorn>=0.34.3",
